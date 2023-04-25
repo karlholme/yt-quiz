@@ -1,0 +1,95 @@
+$base-color: #252627;
+$primary-color: #bb0a21;
+$text-base-color: #d3d4d9;
+$header-font: "Chelsea Market";
+
+body {
+    background: $base-color;
+    color: $text-base-color;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: "Chelsea Market";
+    src: url("../assets/ChelseaMarket-Regular.ttf") format("truetype");
+}
+
+h1 {
+    font-family: "Chelsea Market";
+}
+
+h2 {
+    font-family: "Chelsea Market";
+}
+
+.content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-player-wrapper {
+    padding-bottom: 1rem;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 6px;
+    border-radius: 50px;
+    display: inline-flex;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin: 0.2rem 0;
+    -webkit-tap-highlight-color: transparent;
+
+    &:hover,
+    &:focus-within {
+        background: rgba($text-base-color, 0.1);
+    }
+    input {
+        background: white !important;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 0;
+        box-shadow: inset 0 0 0 1.5px $text-base-color;
+        appearance: none;
+        padding: 0;
+        margin: 0;
+        transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
+        pointer-events: none;
+
+        &:focus {
+            outline: none;
+        }
+        &:checked {
+            box-shadow: inset 0 0 0 6px $primary-color;
+        }
+    }
+    span {
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 20px;
+        padding: 0 8px;
+    }
+}
+
+button {
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $primary-color;
+    padding: 0.5rem 3rem;
+    border-radius: 1rem;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    border-bottom: 0.3rem solid rgba(black, 0.5);
+
+    &:hover {
+        margin-top: 0.1rem;
+        background-color: #bb0a20;
+        border-bottom: 0.1rem solid rgba(black, 0.4);
+    }
+}

@@ -46,13 +46,28 @@ export default function App() {
             }}>
                 <h2>{question.question}</h2>
                 <div className='video-player-wrapper'>
-                    <YouTubePlayer
-                        opts={{
-                            playerVars: {
-                                autoplay: 1
-                            }
-                        }}
-                        videoId={question.videoId} />
+                    <div className={question.dontShowVideo && 'blur'} >
+                        {<div className='video-title-overlay' />}
+                        <YouTubePlayer
+                            videoId={question.videoId}
+                            onStateChange={function (e) {
+                                console.log(e);
+                            }}
+                            opts={{
+                                playerVars: {
+                                    start: question.startTime || 0,
+                                    end: question.endTime || 20,
+                                    autoplay: 1,
+                                    frameborder: 0,
+                                    controls: 0,
+                                    showinfo: 0,
+                                    fs: 0,
+                                    iv_load_policy: 3,
+                                    rel: 0
+                                }
+                            }}
+                        />
+                    </div>
                 </div>
                 <div style={{ marginBottom: '1rem' }}>
                     {Object.values(question.answers).map(function (answer) {

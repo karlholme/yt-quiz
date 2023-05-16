@@ -3,6 +3,20 @@ $primary-color: #bb0a21;
 $text-base-color: #d3d4d9;
 $header-font: "Chelsea Market";
 
+.video-title-overlay {
+    position: absolute;
+    width: 400px;
+    height: 30px;
+    top: 17px;
+    left: 60px;
+    background-color: $base-color;
+    filter: blur(2px);
+}
+
+.blur {
+    filter: blur(20px);
+}
+
 body {
     background: $base-color;
     color: $text-base-color;
@@ -30,6 +44,7 @@ h2 {
 }
 
 .video-player-wrapper {
+    position: relative;
     padding-bottom: 1rem;
 }
 
